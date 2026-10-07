@@ -1,3 +1,3 @@
 export default function Header() {
-  return <header className="text-center">Headere here</header>;
+  return <header className="text-center bg-info p-2">Headere here</header>;
 }

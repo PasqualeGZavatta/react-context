@@ -1,3 +1,7 @@
-export default function Footer() {
-  return <footer className="text-center">Footer here</footer>;
+export default function Footer({ temperature }) {
+  return (
+    <footer className="text-center bg-info p-2">
+      Temperature:{temperature}{" "}
+    </footer>
+  );
 }
