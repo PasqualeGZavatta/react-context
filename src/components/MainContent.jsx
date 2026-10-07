@@ -9,13 +9,20 @@ export default function MainContent({
 }) {
   return (
     <main className="flex-grow-1">
-      <Sidebar />
-      <ThermostatSection
-        temperature={temperature}
-        handleRemove={handleRemove}
-        handleReset={handleReset}
-        handleAdd={handleAdd}
-      />
+      <div className="container d-flex justify-content-between ">
+        <Sidebar handleReset={handleReset} />
+
+        <ThermostatSection
+          temperature={temperature}
+          handleRemove={handleRemove}
+          handleReset={handleReset}
+          handleAdd={handleAdd}
+        />
+        <Sidebar
+          handleReset={handleReset}
+          className="d-none"
+        />
+      </div>
     </main>
   );
 }
