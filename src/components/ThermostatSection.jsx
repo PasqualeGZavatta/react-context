@@ -1,20 +1,25 @@
 // import { useState } from "react";
 
+import { useContext } from "react";
 import ButtonOperation from "./ui/ButtonOperation";
+import TemperatureContext from "../contexts/TermostatContext";
 
-export default function ThermostatSection({
-  temperature,
-  handleRemove,
-  handleReset,
-  handleAdd,
-}) {
+export default function ThermostatSection() {
+  const { temperature, handleRemove, handleReset, handleAdd } =
+    useContext(TemperatureContext);
+  //   {
+  //   temperature,
+  //   handleRemove,
+  //   handleReset,
+  //   handleAdd,
+  // }
   function temperaturaPercepita() {
     if (temperature >= 16 && temperature <= 19) {
-      return <h4>freddo</h4>;
+      return <h4>Freddo</h4>;
     } else if (temperature >= 24 && temperature <= 28) {
-      return <h4>caldo</h4>;
+      return <h4>Caldo</h4>;
     } else {
-      return <h4>confort</h4>;
+      return <h4>Confort</h4>;
     }
   }
 
