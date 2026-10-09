@@ -1,12 +1,11 @@
 // import { useState } from "react";
 
-import { useContext } from "react";
 import ButtonOperation from "./ui/ButtonOperation";
-import TemperatureContext from "../contexts/TermostatContext";
+import { useTemperatureContext } from "../contexts/TermostatContext";
 
 export default function ThermostatSection() {
   const { temperature, handleRemove, handleReset, handleAdd } =
-    useContext(TemperatureContext);
+    useTemperatureContext();
   //   {
   //   temperature,
   //   handleRemove,

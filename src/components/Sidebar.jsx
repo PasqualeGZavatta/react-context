@@ -1,11 +1,10 @@
-import { useContext } from "react";
 import ButtonOperation from "./ui/ButtonOperation";
-import TemperatureContext from "../contexts/TermostatContext";
+import { useTemperatureContext } from "../contexts/TermostatContext";
 
 export default function Sidebar() {
   // { handleReset }
 
-  const { handleReset } = useContext(TemperatureContext);
+  const { handleReset } = useTemperatureContext();
 
   {
     return (

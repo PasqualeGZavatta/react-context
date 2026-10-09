@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 
@@ -24,10 +25,22 @@ export function TemperatureProvider({ children }) {
 
   return (
     <TemperatureContext.Provider
-      value={{ temperature, handleRemove, handleReset, handleAdd }}>
+      value={{
+        temperature,
+        handleRemove,
+        handleReset,
+        handleAdd,
+      }}>
       {children}
     </TemperatureContext.Provider>
   );
 }
+//eslint-disable-next-line
+export function useTemperatureContext() {
+  const context = useContext(TemperatureContext);
 
-export default TemperatureContext;
+  if (!context) {
+    throw new Error("Error, this component has no context");
+  }
+  return context;
+}
